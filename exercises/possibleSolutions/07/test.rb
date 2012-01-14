@@ -2,18 +2,20 @@ require "./script.rb"
 require "test/unit"
 
 class TestTheScript < Test::Unit::TestCase
+  
+  SEARCHED_TEXT = <<TEXT
+This is a line
+This is another line
+Third line coming up
+TEXT
 
   def test_basic
-    env_variable = lookup_env_variable("PATH")
-    assert env_variable.include?("usr")
+    assert_equal 3, count_word(SEARCHED_TEXT, "line")
   end
-
+  
   def test_bonus
-    expected_error = `ruby env_lookup.rb`
-    assert expected_error.include?("Usage:")
-
-    lookup_result = `ruby env_lookup.rb "PATH"`
-    assert lookup_result.include?("usr")
+    expected_locations = [[10,1], [16,2], [6,3]]
+    assert_equal expected_locations, word_occurs_at(SEARCHED_TEXT, "line") 
   end
 
 end

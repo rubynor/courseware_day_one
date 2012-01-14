@@ -1,18 +1,8 @@
 
-def count_word text, word
-  text.lines.count { |line| line =~ /#{word}/ } 
+def execute_in_shell command
+  result = `#{command}`
 end
 
-
-
-
-def word_occurs_at text, word
-  locations = []
-  
-  text.lines.each_with_index do |line, line_no| 
-    char_pos = line =~ /#{word}/ 
-    locations.push [char_pos, line_no+1]
-  end
-  
-  return locations
+def list_dir path  
+  result = `ls #{path}`
 end

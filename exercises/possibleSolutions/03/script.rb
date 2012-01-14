@@ -1,5 +1,4 @@
-
-def growth_spurt items
+def grow items
   items.map { |item| item*100 }
 end
 

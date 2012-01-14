@@ -1,4 +1,4 @@
-def to_hash keys, values
+def hashify keys, values
   hash = {}
   keys.each_with_index do |key, index|
     hash[key] = values[index]
@@ -8,7 +8,7 @@ end
 
 
 
-def to_array hash
+def arrayify hash
   keys = []
   values = []
   hash.keys.each do |key| 

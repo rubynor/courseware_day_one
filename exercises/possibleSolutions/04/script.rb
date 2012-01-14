@@ -43,5 +43,3 @@ def create_dummy_text_bonus line_width, line_no, words
   
   return lines
 end
-
-

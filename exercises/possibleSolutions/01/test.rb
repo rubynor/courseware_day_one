@@ -16,5 +16,5 @@ class TestTheScript < Test::Unit::TestCase
     assert_equal 6, multiply_mixed(3,"2")
     assert_equal 2, divide_mixed("4","2")
   end
-  
+
 end
