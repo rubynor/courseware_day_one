@@ -1,0 +1,6 @@
+TODO
+--
+
+Create a method add_strict(a, b) which adds integers. If any params
+are of any other types than a number, an exception should be
+thrown. Verify that exception is thrown as expected in a unit test.

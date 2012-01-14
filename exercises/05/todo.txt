@@ -1,0 +1,18 @@
+TODO
+--
+
+Create a hashify(keys, values) method that takes two arrays and returns a
+hash based on them.  One array contains the keys, the other the
+values.
+
+Example:  
+hashify([:firstname, :lastname], ["Tony", "Soprano"])   => { :firstname => "Tony", :lastname => "Soprano" }
+
+
+
+BONUS: Create the inverse method, arrayify(hash) which takes a hash
+and returns two arrays, one containing the keys and the other
+containing the values.
+
+Example:  
+arraify({ :firstname => "Tony", :lastname => "Soprano" })  => [:firstname, :lastname], ["Tony", "Soprano"]
