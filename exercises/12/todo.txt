@@ -1,0 +1,40 @@
+TODO
+--
+
+Implement RubyKurs::Tree, a namespaced implementation of a basic tree  
+datastructure. Each tree node should be initialized with a value, and have
+an array of children. See the test file for a basic idea of the API.
+
+Then give it all the standard iterator methods by creating and each()
+method mixing the Enumerable module into the class. Verify that the
+following enumeration methods then work on the tree:
+
+count
+map
+find_all
+any?
+
+HINT: You can declare that a method expects a block like this:
+
+def foo(&block)
+   # ...
+end
+
+The block can then be called explicitly like this:
+block.call(345)
+
+Using the method foo would then look like this:
+foo { |number| puts number} # => 345
+
+
+BONUS 1: Think about, or discuss with partner: why does the Enumerable
+module only mix in non-destructive methods?
+
+BONUS 2: Implement a to_s method which outputs the tree as a string,
+like this:
+
+parent.to_s # => parent
+            # =>   child1
+            # =>     grandchild1
+            # =>     grandchild2
+            # =>   child2
