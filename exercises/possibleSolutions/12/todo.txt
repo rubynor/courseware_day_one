@@ -1,13 +1,38 @@
 TODO
 --
 
-Implement RubyKurs:Tree, a namespaced implementation of a basic tree
-structure. Each Tree object api should support methods add(child), parent_node(),
-children_nodes(), is_leaf?
+Implement RubyKurs::Tree, a namespaced implementation of a basic tree
+structure.
 
-Give it all the standard iterator methods by
-mixing Enumerable into it. Verify that map, find_all and any? methods
-work.
+The api should look like this:
+
+tree_node = RubyKurs::Tree.new("parent")
+puts tree_node.value # => parent
+child1 = RubyKurs::Tree.new("child1")
+child2 = RubyKurs::Tree.new("child2")
+tree_node.add(child1)
+tree_node.add(child2)
+
+Then give it all the standard iterator methods by mixing the
+Enumerable module into it. Verify that the following enumeration methods work
+on the tree:
+
+count
+map
+find_all
+any?
+
+HINT: You can declare that a method expects a block like this:
+
+def foo(&block)
+   # ...
+end
+
+The block can then be called explicitly like this:
+block.call(345)
+
+Using the method foo would then look like this
+foo { |number| puts number} # => 345
 
 BONUS: Think about, or discuss with partner: why does the Enumerable
 module only mix in non-destructive methods?
