@@ -32,11 +32,11 @@ class TestTheScript < Test::Unit::TestCase
   def test_enumerable_mixin
     tree = single_parent_two_children    
     assert_equal 3, tree.count
-    assert_equal ["RubyKurs::Tree", "RubyKurs::Tree", "RubyKurs::Tree"], tree.map { |node| node.node_value }
+    assert_equal ["parent", "child1", "child2"], tree.map { |node| node.node_value }
     parents = tree.find_all { |node| node.node_value == "parent" }
     parents.count == 1
-    assert_true tree.any? { |node| node.node_value == "child1" }
-    assert_false tree.any? { |node| node.node_value == "child3" }
+    assert tree.any? { |node| node.node_value == "child1" }
+    refute tree.any? { |node| node.node_value == "child3" }
   end
 
   def test_tostring
@@ -47,7 +47,6 @@ parent
   child2
 AS_STRING
     actual = single_parent_two_children.to_s
-    puts actual
     assert_equal expected, actual
   end
   

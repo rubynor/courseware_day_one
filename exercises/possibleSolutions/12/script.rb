@@ -13,18 +13,6 @@ module RubyKurs
       @children.push child
     end
     
-    def each
-      traverse_down { |node| yield(node) }
-    end
-
-    # Run given block on current node and all its descendants recursively
-    def traverse_down(&block)
-      block.call(self)
-      if(!children.nil?)
-        children.each{ |child| child.traverse_down(&block) }
-      end
-    end
-
     def to_s(indentation=0)
       node_descr = ""
       indentation.times { node_descr.concat "  " }
@@ -35,6 +23,18 @@ module RubyKurs
         end
       end
       return node_descr
+    end
+    
+    def each
+      traverse_down { |node| yield(node) }
+    end
+
+    # Run given block on current node and all its descendants recursively
+    def traverse_down(&block)
+      block.call(self)
+      if(!children.nil?)
+        children.each{ |child| child.traverse_down(&block) }
+      end
     end
     
   end
