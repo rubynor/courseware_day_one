@@ -1,3 +1,13 @@
 TODO
 --
 
+Implement RubyKurs:Tree, a namespaced implementation of a basic tree
+structure. Each Tree object api should support methods add(child), parent_node(),
+children_nodes(), is_leaf?
+
+Give it all the standard iterator methods by
+mixing Enumerable into it. Verify that map, find_all and any? methods
+work.
+
+BONUS: Think about, or discuss with partner: why does the Enumerable
+module only mix in non-destructive methods?
