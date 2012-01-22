@@ -1,3 +1,35 @@
 TODO
 --
 
+Create a domain model for honeybees and their beehive.
+
+Implement the following:
+
+* Class hierarchy and relationships for hive and bees:
+
+There is a behive, which has many bee entities living inside it. They
+can at any time be outside or inside the hive.  The bees come in
+several different types: queen, drone, and worker. Queens can
+reproduce, workers can defend the colony. New bees are added to the
+hive by the queen reproducing.
+
+* hive.new(x,y,z) => creates a new beehive with x queens, y drones, z workers
+* hive.count_queens => count total queens belonging to hive
+* hive.count_drones => count total drones belonging to hive
+* hive.count_workers => count total workers belonging to hive
+* hive.bees_inside => count number of bees currently inside hive
+* hive.bees_outside => count number of bees currently outside hive
+* hive.enter(bee) => the specified bee object flies outside the hive
+* hive.exit(bee) => the specified bee object flies inside the hive
+* hive.defend() => empties the hive of worker bees (the "soldiers") temporarily
+* hive.swarm() => The queen and 50% of both workers and drones leave
+  the hive *permanently*
+* bee.reproduce(n, home_hive, type) => (Queen bee only) adds n new
+  bees of bee_type to home_hive
+
+
+BONUS:
+--
+
+Implement and refine more of the honeybee domain model. See
+http://en.wikipedia.org/wiki/Honey_bee for ideas. :)

@@ -1,18 +1,29 @@
 TODO
 --
 
-Implement RubyKurs::Tree, a namespaced implementation of a basic tree  
-datastructure. Each tree node should be initialized with a value, and have
-an array of children. See the test file for a basic idea of the API.
+Implement RubyKurs::Tree, a namespaced implementation of a basic tree
+structure. Each tree node should be initialized with a value, and have
+an array of children. Each child, in turn, can have more children 
+and so on down to the leaf nodes.
 
-Then give it all the standard iterator methods by creating and each()
-method mixing the Enumerable module into the class. Verify that the
+The api should look roughly like this:
+
+tree_node = RubyKurs::Tree.new("Daddy")
+puts tree_node.value # => parent
+child1 = RubyKurs::Tree.new("Kid 1")
+child2 = RubyKurs::Tree.new("Kid 2")
+tree_node.add(child1)
+tree_node.add(child2)
+
+
+Then give it all the standard iterator methods by creating the each()
+method and mixing the Enumerable module into the class. Verify that the
 following enumeration methods then work on the tree:
 
-count
-map
-find_all
-any?
+count()
+map()
+find_all()
+any?()
 
 HINT: You can declare that a method expects a block like this:
 
